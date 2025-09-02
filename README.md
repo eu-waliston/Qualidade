@@ -1,8 +1,8 @@
 # 🚀 Projeto Acadêmico: Gerenciamento de Riscos em Projetos de Software
 
-![GitHub last commit](https://img.shields.io/github/last-commit/eu-waliston/riscos-projetos-software?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/eu-waliston/riscos-projetos-software?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/eu-waliston/riscos-projetos-software?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/eu-waliston/Qualidade?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/eu-waliston/Qualidade?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/eu-waliston/Qualidade?style=for-the-badge)
 
 ## 📋 Sobre o Projeto
 
