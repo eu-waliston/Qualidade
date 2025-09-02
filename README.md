@@ -281,6 +281,8 @@ Yriane de Morais & Waliston Euripedes
 
 # 🎓 Instituição
 
-<https://via.placeholder.com/150x50?text=Logo+Institui%C3%A7%C3%A3o>
+<div align="center">
+Universidade Federal de Santa Maria
+O conhecimento que transforma
 
-Este projeto foi desenvolvido como parte do curso de Sistemas de Informação da Universidade Federal de Santa Maria.
+</div> ```
