@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/eu-waliston/Qualidade?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/eu-waliston/Qualidade?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/eu-waliston/Qualidade?style=for-the-badge)
+![GitHub](https://img.shields.io/badge/Licença-MIT-yellow?style=for-the-badge)
 
 ## 📋 Sobre o Projeto
 
