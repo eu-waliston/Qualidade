@@ -281,8 +281,7 @@ Yriane de Morais & Waliston Euripedes
 
 # 🎓 Instituição
 
-<div align="center">
-Universidade Federal de Santa Maria
+
+### Universidade Federal de Santa Maria
 O conhecimento que transforma
 
-</div> ```
