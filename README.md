@@ -1,8 +1,8 @@
 # 🚀 Projeto Acadêmico: Gerenciamento de Riscos em Projetos de Software
 
-![GitHub last commit](https://img.shields.io/github/last-commit/seu-usuario/riscos-projetos-software?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/seu-usuario/riscos-projetos-software?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/seu-usuario/riscos-projetos-software?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/eu-waliston/riscos-projetos-software?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/eu-waliston/riscos-projetos-software?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/eu-waliston/riscos-projetos-software?style=for-the-badge)
 
 ## 📋 Sobre o Projeto
 
@@ -246,7 +246,7 @@ pie title Distribuição de Riscos em Projetos de Software
 "Antes de tudo, precisamos entender: o que é risco? Risco é um evento ou condição incerta que, se ocorrer, tem um efeito positivo ou negativo nos objetivos do projeto. Diferente de um problema, que já aconteceu, ou uma issue, que é um ponto de atenção..."
 
 **[Continuação do script...]**
-(O script completo teria aproximadamente 4500-5000 palavras para 45 minutos)
+(O script completo teria aproximadamente 45 minutos)
 
 ---
 
