@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riscos em Projetos de Software - Projeto Acadêmico</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #2980b9;
+        }
+        
+        .author {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .table-of-contents {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .table-of-contents ul {
+            columns: 2;
+            padding-left: 20px;
+        }
+        
+        .table-of-contents li {
+            margin-bottom: 8px;
+        }
+        
+        .risk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .risk-table th, .risk-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .risk-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .risk-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .matrix {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        
+        .matrix-container {
+            display: grid;
+            grid-template-columns: 100px repeat(5, 80px);
+            grid-template-rows: 40px repeat(5, 60px);
+            gap: 2px;
+        }
+        
+        .matrix-cell {
+            padding: 8px;
+            text-align: center;
+            font-size: 0.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .matrix-header {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .cell-1 { background-color: #e74c3c; color: white; }
+        .cell-2 { background-color: #e67e22; color: white; }
+        .cell-3 { background-color: #f1c40f; }
+        .cell-4 { background-color: #2ecc71; color: white; }
+        .cell-5 { background-color: #27ae60; color: white; }
+        
+        .reference {
+            font-size: 0.9em;
+            padding-left: 20px;
+            text-indent: -20px;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .table-of-contents {
+                page-break-after: always;
+            }
+            
+            h2 {
+                page-break-after: avoid;
+            }
+            
+            .matrix {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Riscos em Projetos de Software</h1>
+        <p class="author">Identificação, Análise e Mitigação</p>
+        <p class="author">Projeto Acadêmico - Yriane de Morais & Waliston Euripedes</p>
+        <p class="author">Universidade Federal de Santa Maria [UFSM] - [2 Set 2025]</p>
+    </header>
+
+    <div class="section">
+        <h2>Resumo Executivo</h2>
+        <p>Este projeto acadêmico explora a gestão de riscos em projetos de software, abordando desde a identificação até a mitigação dos principais riscos. Através de uma revisão teórica e um estudo de caso prático, demonstramos como uma abordagem estruturada para o gerenciamento de riscos pode significativamente aumentar as taxas de sucesso de projetos de desenvolvimento de software.</p>
+    </div>
+
+    <div class="table-of-contents">
+        <h2>Sumário</h2>
+        <ul>
+            <li>1. Introdução</li>
+            <li>2. Revisão Teórica</li>
+            <li>3. Classificação dos Riscos</li>
+            <li>4. Processo de Gerenciamento de Riscos</li>
+            <li>5. Estudo de Caso</li>
+            <li>6. Ferramentas de Apoio</li>
+            <li>7. Conclusões</li>
+            <li>Referências Bibliográficas</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>1. Introdução</h2>
+        <p>O desenvolvimento de software é inerentemente arriscado. Estudos mostram que uma porcentagem significativa de projetos de software não entrega o valor esperado, excede o orçamento ou não cumpre os prazos. A gestão de riscos sistemática tornou-se, portanto, uma disciplina crítica para o sucesso de projetos de TI.</p>
+        
+        <h3>1.1. Objetivos</h3>
+        <p>Este trabalho tem como objetivos:</p>
+        <ul>
+            <li>Identificar e classificar os principais riscos em projetos de software</li>
+            <li>Apresentar metodologias de análise e avaliação de riscos</li>
+            <li>Demonstrar estratégias de mitigação e resposta a riscos</li>
+            <li>Fornecer um estudo de caso prático de aplicação</li>
+        </ul>
+        
+        <h3>1.2. Justificativa</h3>
+        <p>De acordo com o CHAOS Report do Standish Group, apenas 31% dos projetos de software são bem-sucedidos. A má gestão de riscos é frequentemente citada como uma das principais causas de fracasso, justificando a necessidade de estudos aprofundados sobre o tema.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Revisão Teórica</h2>
+        <p>Risco em projetos de software pode ser definido como um evento ou condição incerta que, se ocorrer, tem um efeito positivo ou negativo em pelo menos um objetivo do projeto.</p>
+        
+        <h3>2.1. Frameworks de Gerenciamento de Riscos</h3>
+        <p>Os principais frameworks incluem:</p>
+        <ul>
+            <li><strong>PMBOK</strong>: Define processos de gerenciamento de riscos</li>
+            <li><strong>CMMI</strong>: Fornece práticas para gerenciamento de riscos</li>
+            <li><strong>ISO 31000</strong>: Norma internacional para gestão de riscos</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Classificação dos Riscos em Projetos de Software</h2>
+        
+        <table class="risk-table">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Exemplos de Riscos</th>
+                    <th>Impacto Potencial</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Riscos Técnicos</strong></td>
+                    <td>Tecnologia nova ou não testada, complexidade excessiva, requisitos de desempenho não realistas</td>
+                    <td>Atrasos, retrabalho, falha em atender especificações</td>
+                </tr>
+                <tr>
+                    <td><strong>Riscos de Gerenciamento</strong></td>
+                    <td>Má definição de escopo, estimativas irrealistas, alocação inadequada de recursos</td>
+                    <td>Excesso de custos, atrasos, baixa qualidade</td>
+                </tr>
+                <tr>
+                    <td><strong>Riscos Organizacionais</strong></td>
+                    <td>Mudanças de prioridades, conflitos internos, falta de comprometimento</td>
+                    <td>Descontinuidade do projeto, baixa moral da equipe</td>
+                </tr>
+                <tr>
+                    <td><strong>Riscos Externos</strong></td>
+                    <td>Mudanças regulatórias, flutuações de mercado, problemas com fornecedores</td>
+                    <td>Necessidade de retrabalho, cancelamento do projeto</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>4. Processo de Gerenciamento de Riscos</h2>
+        
+        <h3>4.1. Identificação de Riscos</h3>
+        <p>Técnicas comuns incluem brainstorming, método Delphi, entrevistas, análise SWOT e checklist baseado em experiências anteriores.</p>
+        
+        <h3>4.2. Análise Qualitativa</h3>
+        <p>Envolve a avaliação da probabilidade e impacto dos riscos identificados, geralmente usando uma matriz de probabilidade-impacto:</p>
+        
+        <div class="matrix">
+            <div class="matrix-container">
+                <div class="matrix-cell matrix-header"></div>
+                <div class="matrix-cell matrix-header">Muito Baixa</div>
+                <div class="matrix-cell matrix-header">Baixa</div>
+                <div class="matrix-cell matrix-header">Média</div>
+                <div class="matrix-cell matrix-header">Alta</div>
+                <div class="matrix-cell matrix-header">Muito Alta</div>
+                
+                <div class="matrix-cell matrix-header">Muito Alto</div>
+                <div class="matrix-cell cell-3">Risco Moderado</div>
+                <div class="matrix-cell cell-2">Risco Alto</div>
+                <div class="matrix-cell cell-1">Risco Extremo</div>
+                <div class="matrix-cell cell-1">Risco Extremo</div>
+                <div class="matrix-cell cell-1">Risco Extremo</div>
+                
+                <div class="matrix-cell matrix-header">Alto</div>
+                <div class="matrix-cell cell-4">Risco Baixo</div>
+                <div class="matrix-cell cell-3">Risco Moderado</div>
+                <div class="matrix-cell cell-2">Risco Alto</div>
+                <div class="matrix-cell cell-1">Risco Extremo</div>
+                <div class="matrix-cell cell-1">Risco Extremo</div>
+                
+                <div class="matrix-cell matrix-header">Médio</div>
+                <div class="matrix-cell cell-5">Risco Muito Baixo</div>
+                <div class="matrix-cell cell-4">Risco Baixo</div>
+                <div class="matrix-cell cell-3">Risco Moderado</div>
+                <div class="matrix-cell cell-2">Risco Alto</div>
+                <div class="matrix-cell cell-1">Risco Extremo</div>
+                
+                <div class="matrix-cell matrix-header">Baixo</div>
+                <div class="matrix-cell cell-5">Risco Muito Baixo</div>
+                <div class="matrix-cell cell-5">Risco Muito Baixo</div>
+                <div class="matrix-cell cell-4">Risco Baixo</div>
+                <div class="matrix-cell cell-3">Risco Moderado</div>
+                <div class="matrix-cell cell-2">Risco Alto</div>
+                
+                <div class="matrix-cell matrix-header">Muito Baixo</div>
+                <div class="matrix-cell cell-5">Risco Muito Baixo</div>
+                <div class="matrix-cell cell-5">Risco Muito Baixo</div>
+                <div class="matrix-cell cell-5">Risco Muito Baixo</div>
+                <div class="matrix-cell cell-4">Risco Baixo</div>
+                <div class="matrix-cell cell-3">Risco Moderado</div>
+            </div>
+        </div>
+        
+        <h3>4.3. Planejamento de Respostas</h3>
+        <p>As principais estratégias para riscos negativos:</p>
+        <ul>
+            <li><strong>Evitamento</strong>: Eliminar a ameaça</li>
+            <li><strong>Transferência</strong>: Terceirizar o risco</li>
+            <li><strong>Mitigação</strong>: Reduzir probabilidade ou impacto</li>
+            <li><strong>Aceitação</strong>: Assumir o risco conscientemente</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>5. Estudo de Caso: Sistema de Gestão Acadêmica</h2>
+        
+        <h3>5.1. Contexto do Projeto</h3>
+        <p>Desenvolvimento de um sistema integrado de gestão acadêmica para uma universidade, com prazo de 12 meses e orçamento de R$ 500.000,00.</p>
+        
+        <h3>5.2. Riscos Identificados e Mitigação</h3>
+        <table class="risk-table">
+            <thead>
+                <tr>
+                    <th>Risco</th>
+                    <th>Probabilidade</th>
+                    <th>Impacto</th>
+                    <th>Estratégia de Mitigação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mudanças frequentes de requisitos</td>
+                    <td>Alta</td>
+                    <td>Alto</td>
+                    <td>Implementar processo de controle de mudanças; usar metodologia ágil</td>
+                </tr>
+                <tr>
+                    <td>Falta de competência técnica na equipe</td>
+                    <td>Média</td>
+                    <td>Alto</td>
+                    <td>Treinamento; contratação de especialistas; pair programming</td>
+                </tr>
+                <tr>
+                    <td>Problemas de integração com sistemas legados</td>
+                    <td>Alta</td>
+                    <td>Médio</td>
+                    <td>Prototipação antecipada; testes de integração contínuos</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>5.3. Resultados</h3>
+        <p>Com a aplicação sistemática de gestão de riscos, o projeto foi concluído com 10% de contingência de tempo e 15% de contingência orçamentária utilizada, considerado um sucesso pela instituição.</p>
+    </div>
+
+    <div class="section">
+        <h2>6. Ferramentas de Apoio</h2>
+        <p>Diversas ferramentas podem auxiliar no gerenciamento de riscos:</p>
+        <ul>
+            <li><strong>JIRA</strong>: Para acompanhamento de issues e riscos</li>
+            <li><strong>RiskyProject</strong>: Software especializado em análise de riscos</li>
+            <li><strong>Planilhas personalizadas</strong>: Para projetos menores</li>
+            <li><strong>Microsoft Project</strong>: Com funcionalidades básicas de gestão de riscos</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>7. Conclusões</h2>
+        <p>A gestão de riscos é um componente essencial para o sucesso de projetos de software. Através da identificação precoce, análise sistemática e planejamento de respostas apropriadas, as organizações podem significantly aumentar suas taxas de sucesso.</p>
+        
+        <p>Recomendações principais:</p>
+        <ul>
+            <li>Integrar a gestão de riscos em todas as fases do projeto</li>
+            <li>Envolver todas as partes interessadas no processo de identificação de riscos</li>
+            <li>Manter um registro de riscos atualizado e acessível</li>
+            <li>Revisar regularmente os riscos e adaptar as estratégias de resposta</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Referências Bibliográficas</h2>
+        <p class="reference">BOEHM, B. W. Software risk management: principles and practices. IEEE Software, v. 8, n. 1, p. 32-41, 1991.</p>
+        <p class="reference">PMI. Project Management Body of Knowledge (PMBOK Guide). 6th ed. Project Management Institute, 2017.</p>
+        <p class="reference">PRESSMAN, R. S. Software engineering: a practitioner's approach. 8th ed. McGraw-Hill, 2014.</p>
+        <p class="reference">SOMMERVILLE, I. Engenharia de software. 10ª ed. Pearson, 2018.</p>
+        <p class="reference">STANDISH GROUP. CHAOS Report: Beyond Infinity. 2020.</p>
+    </div>
+
+    <footer>
+        <p>Projeto Acadêmico - Riscos em Projetos de Software</p>
+        <p>© Yriane de Morais & Waliston Euripedes - [2025] - Para fins acadêmicos</p>
+    </footer>
+</body>
+</html>
