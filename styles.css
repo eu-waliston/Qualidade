@@ -1,0 +1,415 @@
+/* Variáveis de cores para consistência e personalização */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --ufsm-green: #007C4D;
+  --ufsm-gray: #63666A;
+}
+
+/* Reset e estilos base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Container principal para centralizar o conteúdo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho com identidade UFSM */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, var(--primary-color), #1a2530);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ufsm-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ufsm-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.ufsm-title {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.ufsm-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.2em;
+  line-height: 1.2;
+}
+
+.author {
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+/* Seções de conteúdo */
+.section {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: var(--secondary-color);
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+h4 {
+  color: var(--dark-color);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Sumário */
+.table-of-contents {
+  background-color: #e8f4fc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.table-of-contents ul {
+  columns: 1;
+  padding-left: 20px;
+}
+
+.table-of-contents li {
+  margin-bottom: 8px;
+  break-inside: avoid;
+}
+
+/* Tabelas */
+.risk-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9em;
+}
+
+.risk-table th,
+.risk-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.risk-table th {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.risk-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Matriz de riscos */
+.matrix {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+  overflow-x: auto;
+}
+
+.matrix-container {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 60px);
+  grid-template-rows: 40px repeat(5, 50px);
+  gap: 2px;
+}
+
+.matrix-cell {
+  padding: 5px;
+  text-align: center;
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-header {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+
+.cell-1 {
+  background-color: var(--danger-color);
+  color: white;
+}
+.cell-2 {
+  background-color: var(--warning-color);
+  color: white;
+}
+.cell-3 {
+  background-color: #f1c40f;
+}
+.cell-4 {
+  background-color: #2ecc71;
+  color: white;
+}
+.cell-5 {
+  background-color: var(--success-color);
+  color: white;
+}
+
+/* Referências */
+.reference {
+  font-size: 0.9em;
+  padding-left: 20px;
+  text-indent: -20px;
+  margin-bottom: 10px;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+  color: #7f8c8d;
+}
+
+/* Elementos UFSM */
+.ufsm-brand {
+  color: var(--ufsm-green);
+  font-weight: bold;
+}
+
+.ufsm-bg {
+  background-color: var(--ufsm-green);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Media Queries para responsividade */
+
+/* Tablets */
+@media screen and (min-width: 768px) {
+  .table-of-contents ul {
+    columns: 2;
+  }
+  
+  .matrix-container {
+    grid-template-columns: 100px repeat(5, 80px);
+    grid-template-rows: 40px repeat(5, 60px);
+  }
+  
+  .matrix-cell {
+    padding: 8px;
+    font-size: 0.8em;
+  }
+  
+  .risk-table {
+    font-size: 1em;
+  }
+}
+
+/* Dispositivos móveis pequenos */
+@media screen and (max-width: 767px) {
+  body {
+    padding: 0 10px;
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  h3 {
+    font-size: 1.2em;
+  }
+  
+  .section {
+    padding: 15px;
+  }
+  
+  .risk-table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .ufsm-header {
+    text-align: center;
+  }
+}
+
+/* Mobile muito pequeno */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  h2 {
+    font-size: 1.3em;
+  }
+  
+  header {
+    padding: 20px 15px;
+  }
+  
+  .matrix-container {
+    grid-template-columns: 60px repeat(5, 45px);
+    grid-template-rows: 30px repeat(5, 40px);
+  }
+  
+  .matrix-cell {
+    padding: 3px;
+    font-size: 0.6em;
+  }
+  
+  .table-of-contents ul {
+    columns: 1;
+  }
+}
+
+/* Estilos para impressão */
+@media print {
+  body {
+    background-color: white;
+    padding: 0;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .section {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+  
+  .table-of-contents {
+    page-break-after: always;
+  }
+  
+  h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  .matrix {
+    page-break-inside: avoid;
+  }
+  
+  header {
+    background: var(--primary-color);
+    color: black;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .risk-table th {
+    background: var(--secondary-color);
+    color: white;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  /* Esconder elementos desnecessários para impressão */
+  .no-print {
+    display: none;
+  }
+}
+
+/* Utilitários adicionais */
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.highlight {
+  background-color: #fff8e1;
+  padding: 15px;
+  border-left: 4px solid #ffc107;
+  margin: 15px 0;
+}
+
+.note {
+  background-color: #e3f2fd;
+  padding: 15px;
+  border-left: 4px solid #2196f3;
+  margin: 15px 0;
+}
+
+/* Layout flexível para elementos */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.flex-item {
+  flex: 1 1 300px;
+}
+
+/* Estilo de cartão para uma aparência moderna */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
